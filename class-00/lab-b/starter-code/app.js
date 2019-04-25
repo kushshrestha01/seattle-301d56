@@ -124,21 +124,21 @@ let objectLit = array => ({
 console.log(objectLit());
 
 // eslint-disable-next-line no-template-curly-in-string
-let sumAndProduct = (a, b) => '${a} + ${b} = ${a + b}'; '${a} * ${b} = ${a * b}'
+let sumAndProduct = (a, b) => a + b;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sumAndProduct(3, 9));
 
 
-let message = function(name) {
+let message = (name) => {
   return `Hello, ${name}!`;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(message('Allie'));
 
 
-let Student = function(name, age, hometown) {
+let Student = function(name, age, hometown){
   this.name = name;
   this.age = age;
   this.hometown = hometown;
@@ -148,16 +148,16 @@ let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 
-Student.prototype.greeting = function() {
+Student.prototype.greeting = function(){
   return `Hi, my name is ${this.name}`;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 
 Student.courseName = function() {
@@ -165,28 +165,28 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
 // STEP 11
 // How do arrow functions affect constructor functions?
-Student.prototype.scope = function() {
+Student.prototype.scope = () =>{
   console.log(this);
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//window
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//undefined
 // 3. Explain why "this" is different when an arrow function is used.
-//
+//not sure
